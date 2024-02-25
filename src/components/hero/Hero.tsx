@@ -1,13 +1,11 @@
 "use client";
 import React, { FC } from "react";
-import Typewriter from "typewriter-effect";
 
 import Image from "next/image";
 import TypewriterEffect from "../TypewriterEffect";
 import { TextGenerateEffect } from "../ui/text-generate-effect";
 import { PiDownloadSimple } from "react-icons/pi";
-import { LuHeartHandshake } from "react-icons/lu";
-import { BiArrowBack } from "react-icons/bi";
+
 import { IoIosArrowRoundForward } from "react-icons/io";
 
 interface Props {}
@@ -19,11 +17,11 @@ const Hero: FC = (props: Props) => {
       <div className=" bg-gradient-to-t from-gray-950 to-transparent  z-10 h-screen w-full sm:hidden absolute"></div>
       {/* Left */}
       <div className="flex flex-col z-20 justify-between h-screen sm:justify-evenly">
-        <div className="flex flex-col sm:justify-center py-12   gap-6">
+        <div className="flex flex-col min-h-80 sm:justify-center py-12   gap-6">
           <div className="">
             <TextGenerateEffect words={intro} className="" />
           </div>
-          <div className="md:w-2/3 text-3xl dark:text-white min-h-10">
+          <div className=" text-3xl dark:text-white min-h-10">
             <TypewriterEffect />{" "}
           </div>
         </div>
@@ -32,7 +30,7 @@ const Hero: FC = (props: Props) => {
             Connect me
             <IoIosArrowRoundForward className="text-xl" />
           </button>
-          <button className="px-8 py-2 justify-center flex gap-2 items-center hover:text-[#ff0000]  font-bold transition duration-200 bg-transparent  text-white sm:text-black border-2 w-48 border-transparent border-red-600 dark:text-white">
+          <button className="px-8 py-2 justify-center flex gap-2 items-center hover:text-[#ff0000]  font-bold transition duration-200 bg-transparent  text-white sm:text-black border-2 w-48  border-red-600 dark:text-white">
             Resume
             <PiDownloadSimple className="" />
           </button>
