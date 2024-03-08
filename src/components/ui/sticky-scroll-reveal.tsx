@@ -101,7 +101,7 @@ export const StickyScroll = ({
         transition={{
           duration: 0.5,
         }}
-        className="hidden lg:block w-96  rounded-md sticky top-10"
+        className="hidden lg:block w-1/3  rounded-md sticky top-10"
       />
     </motion.div>
   );

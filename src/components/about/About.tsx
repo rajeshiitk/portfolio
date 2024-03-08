@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { StickyScroll } from "../ui/sticky-scroll-reveal";
-import { scroller } from "react-scroll";
 import PersonalInfo from "./PersonalInfo";
 import Qualification from "./Qualification";
 import Skills from "./Skills";
@@ -14,7 +13,7 @@ export const tabMenu = [
   { label: "Skills", value: "skills" },
 ];
 
-const images = ["/profile-dark.png", "/profile_light.png", "/profile-dark.png"];
+const images = ["/personal.svg", "/qualifications.svg", "/skills.svg"];
 const content = [
   {
     title: "Personal Info",
