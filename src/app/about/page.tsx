@@ -4,7 +4,9 @@ interface Props {}
 
 const page = (props: Props) => {
   return (
-    <div className="flex justify-center min-h-screen items-center">About</div>
+    <div className="flex justify-center min-h-screen items-center">
+      <h1>About me</h1>
+    </div>
   );
 };
 

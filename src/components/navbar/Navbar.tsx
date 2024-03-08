@@ -26,8 +26,8 @@ function Navbar() {
   const [theme, setTheme] = useState("dark");
 
   return (
-    <nav className="  fixed w-full z-30  rounded-lg">
-      <div className=" mx-auto max-2xl px-4 lg:px-0 ">
+    <nav className="  fixed   backdrop-blur-sm w-full z-30  rounded-lg">
+      <div className=" mx-auto max-2xl px-0.5 sm:px-4 lg:px-0 ">
         <div className="flex  items-center justify-between  p-3 ">
           <div className="flex space-x-3 items-center">
             {links.map((item, index) => {

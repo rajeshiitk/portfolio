@@ -13,10 +13,10 @@ const intro = `Rajesh Choudhary`;
 
 const Hero: FC = (props: Props) => {
   return (
-    <section className="px-8 relative  dark:bg-gray-950   h-screen grid sm:grid-cols-2">
-      <div className=" bg-gradient-to-t from-gray-950 to-transparent  z-10 h-screen w-full sm:hidden absolute"></div>
+    <section className="px-8 relative  dark:bg-gray-950  h-[calc(100svh)] grid sm:grid-cols-2">
+      <div className=" bg-gradient-to-t from-gray-950 to-transparent  z-10 h-[calc(100svh)] w-full sm:hidden absolute"></div>
       {/* Left */}
-      <div className="flex flex-col z-20 justify-between h-screen sm:justify-evenly">
+      <div className="flex flex-col z-20 justify-between h-[calc(100svh)] sm:justify-evenly">
         <div className="flex flex-col min-h-80 sm:justify-center py-12   gap-6">
           <div className="">
             <TextGenerateEffect words={intro} className="" />
