@@ -8,7 +8,6 @@ import { AiOutlinePlusCircle } from "react-icons/ai";
 import {
   PiLaptopThin,
   PiUserLight,
-  PiBagSimpleLight,
   PiHouseSimpleThin,
   PiPenLight,
 } from "react-icons/pi";
@@ -41,7 +40,7 @@ function Navbar() {
                   onMouseOver={() => setHoveredPath(item.path)}
                   className={`px-1 py-1 rounded-full text-sm lg:text-base relative  duration-300 ease-in ${
                     isActive
-                      ? "text-[#ff0000] text-base dark:text-[#ff00000]"
+                      ? "text-highlight text-base dark:text-highlight"
                       : "text-zinc-400"
                   }`}
                 >
@@ -91,9 +90,9 @@ function Navbar() {
             </div>
 
             <Link href={"/contact"}>
-              <div className="bg-[#ff0000] duration-200  hover:bg-transparent   dark:bg-[#ff0000] text-white hover:text-[#ff0000] px-2 rounded-md flex items-center gap-x-2 py-1 dark:hover:text-[#ff0000] border-2 border-transparent hover:border-[#ff0000]">
+              <div className="bg-highlight duration-200  hover:bg-transparent   dark:bg-highlight text-white px-2 rounded-md flex items-center gap-x-2 py-1  border-2 border-transparent hover:border-highlight">
                 <AiOutlinePlusCircle className=" text-xl" />
-                <span className=" sm:font-semibold">Hire Me</span>
+                <span className=" sm:font-semibold ">Hire Me</span>
               </div>
             </Link>
           </div>

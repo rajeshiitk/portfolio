@@ -60,7 +60,7 @@ const About = (props: Props) => {
                   onMouseOver={() => setHoveredPath(item.value)}
                   className={`px-1 py-1 cursor-pointer rounded-full text-sm lg:text-base relative  duration-300 ease-in ${
                     isActive
-                      ? "text-[#ff0000] text-base dark:text-[#ff00000]"
+                      ? "text-highlight text-base dark:text-highlight"
                       : "text-zinc-400"
                   }`}
                 >
@@ -83,7 +83,7 @@ const About = (props: Props) => {
                   {item.value === hoveredPath && (
                     <motion.div
                       // -z-10
-                      className="absolute bottom-0  z-10 left-0 h-full bg-[#ff0000] dark:bg-[#ff0000]  rounded-full "
+                      className="absolute bottom-0  z-10 left-0 h-full bg-highlight dark:bg-highlight rounded-full "
                       layoutId="navbar"
                       aria-hidden="true"
                       style={{

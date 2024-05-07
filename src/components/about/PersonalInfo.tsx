@@ -42,13 +42,13 @@ const PersonalInfo = (props: Props) => {
       <div className="w-full grid gap-4 sm:grid-cols-2 ">
         {personalInfo.map((item, index) => (
           <div key={item.label} className="flex gap-4  items-center flex-1">
-            <p className="text-[#ff0000]">{item.icon}</p>
+            <p className="text-highlight">{item.icon}</p>
             <p>{item.label}</p>
           </div>
         ))}
       </div>
       <div>
-        <h2 className="text-xl flex gap-2 pt-4 font-semibold text-[#ff0000]">
+        <h2 className="text-xl flex gap-2 pt-4 font-semibold text-highlight">
           <FaLanguage /> Languages
         </h2>
         <p className="pl-8">English and Hindi</p>
