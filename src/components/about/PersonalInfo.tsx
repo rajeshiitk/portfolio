@@ -39,7 +39,7 @@ const personalInfo = [
 const PersonalInfo = (props: Props) => {
   return (
     <section>
-      <div className="w-full grid gap-4 sm:grid-cols-2 ">
+      <div className="w-full  grid gap-4 sm:grid-cols-2 ">
         {personalInfo.map((item, index) => (
           <div key={item.label} className="flex gap-4  items-center flex-1">
             <p className="text-highlight">{item.icon}</p>

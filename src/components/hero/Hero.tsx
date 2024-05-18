@@ -14,6 +14,9 @@ const intro = `Rajesh Choudhary`;
 const Hero: FC = (props: Props) => {
   return (
     <section className="px-8 relative  dark:bg-gray-950  h-[calc(100svh)] grid sm:grid-cols-2">
+      <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]">
+        <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_100%_200px,#d5c5ff,transparent)]"></div>
+      </div>
       <div className=" bg-gradient-to-t from-gray-950 to-transparent  z-10 h-[calc(100svh)] w-full sm:hidden absolute"></div>
       {/* Left */}
       <div className="flex flex-col z-20 justify-between h-[calc(100svh)] sm:justify-evenly">

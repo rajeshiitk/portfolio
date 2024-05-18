@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { BsMoon, BsSun } from "react-icons/bs";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
@@ -11,6 +10,7 @@ import {
   PiHouseSimpleThin,
   PiPenLight,
 } from "react-icons/pi";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 let links = [
   { icons: <PiHouseSimpleThin />, path: "/", name: "Home" },
@@ -22,7 +22,6 @@ let links = [
 function Navbar() {
   const pathname = usePathname() || "";
   const [hoveredPath, setHoveredPath] = useState(pathname);
-  const [theme, setTheme] = useState("dark");
 
   return (
     <nav className="  fixed   backdrop-blur-sm w-full z-30  rounded-lg">
@@ -78,19 +77,10 @@ function Navbar() {
           </div>
 
           <div className="flex items-center gap-x-3">
-            <div
-              onClick={() => setTheme(theme == "dark" ? "light" : "dark")}
-              className="cursor-pointer"
-            >
-              {theme == "dark" ? (
-                <BsSun />
-              ) : (
-                <BsMoon className="dark:text-neutral-700" />
-              )}
-            </div>
+            <ThemeToggle />
 
             <Link href={"/contact"}>
-              <div className="bg-highlight duration-200  hover:bg-transparent   dark:bg-highlight text-white px-2 rounded-md flex items-center gap-x-2 py-1  border-2 border-transparent hover:border-highlight">
+              <div className="bg-highlight duration-200  hover:bg-transparent   dark:bg-highlight text-white hover:text-highlight px-2 rounded-md flex items-center gap-x-2 py-1  border-2 border-transparent hover:border-highlight">
                 <AiOutlinePlusCircle className=" text-xl" />
                 <span className=" sm:font-semibold ">Hire Me</span>
               </div>

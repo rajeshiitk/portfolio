@@ -5,6 +5,7 @@ import { StickyScroll } from "../ui/sticky-scroll-reveal";
 import PersonalInfo from "./PersonalInfo";
 import Qualification from "./Qualification";
 import Skills from "./Skills";
+import Image from "next/image";
 
 interface Props {}
 export const tabMenu = [
@@ -18,14 +19,17 @@ const content = [
   {
     title: "Personal Info",
     component: <PersonalInfo />,
+    image: images[0],
   },
   {
     title: "Qualification",
     component: <Qualification />,
+    image: images[1],
   },
   {
     title: "Skills",
     component: <Skills />,
+    image: images[2],
   },
 ];
 
@@ -42,7 +46,7 @@ const About = (props: Props) => {
           About me
         </h1>
         {/* Tab Menu */}
-        <div className="flex  items-center justify-between  p-3 ">
+        {/* <div className="flex  items-center justify-between  p-3 ">
           <div className="flex w-fit max-w-full fixed rounded-full dark:border-2 border-2 z-30 left-1/2 -translate-x-1/2 backdrop-blur-sm bottom-10 space-x-3 items-center">
             {tabMenu.map((item, index) => {
               const isActive = item.value === item.value;
@@ -102,9 +106,28 @@ const About = (props: Props) => {
               );
             })}
           </div>
+        </div> */}
+        <div>
+          {content.map((item, index) => (
+            <div
+              key={index}
+              className="h-[calc(100svh)] justify-center p-10 grid grid-cols-12"
+            >
+              <div className="col-span-12 md:col-span-8">
+                <div className="text-xl font-semibold my-4">{item.title}</div>
+                {item.component}
+              </div>
+              <div className="hidden md:col-span-4 md:block ">
+                <Image
+                  src={item.image}
+                  width={400}
+                  height={400}
+                  alt={item.title}
+                />
+              </div>
+            </div>
+          ))}
         </div>
-
-        <StickyScroll images={images} content={content} />
       </section>
     </main>
   );
