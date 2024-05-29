@@ -46,7 +46,7 @@ function Navbar() {
                   <span
                     className={` relative z-20 ${
                       item.path === hoveredPath &&
-                      "text-neutral-800  dark:text-neutral-500  transition-all ease-in-out duration-500 "
+                      "  transition-all ease-in-out duration-500 "
                     } `}
                   >
                     <div className="hidden sm:block px-4">{item.name}</div>
@@ -56,7 +56,7 @@ function Navbar() {
                   {item.path === hoveredPath && (
                     <motion.div
                       // -z-10
-                      className="absolute bottom-0  z-10 left-0 h-full bg-stone-300 dark:bg-neutral-700  rounded-full "
+                      className="absolute bottom-0  z-10 left-0 h-full bg-accent/50   rounded-full "
                       layoutId="navbar"
                       aria-hidden="true"
                       style={{
@@ -80,7 +80,7 @@ function Navbar() {
             <ThemeToggle />
 
             <Link href={"/contact"}>
-              <div className="bg-highlight duration-200  hover:bg-transparent   dark:bg-highlight text-white hover:text-highlight px-2 rounded-md flex items-center gap-x-2 py-1  border-2 border-transparent hover:border-highlight">
+              <div className="bg-highlight duration-200  hover:bg-transparent    text-white  hover:text-highlight px-2 rounded-md flex items-center gap-x-2 py-1  border-2 border-transparent hover:border-highlight">
                 <AiOutlinePlusCircle className=" text-xl" />
                 <span className=" sm:font-semibold ">Hire Me</span>
               </div>
