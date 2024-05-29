@@ -13,7 +13,7 @@ export const projects: ProjectType[] = [
     id: 1,
     title: "Lazzer - Your ultimate companion",
     des: "Lazzer is a powerful tool that helps you create beautiful illustrations and vector art without any design experience.",
-    img: "/Lazzer.png",
+    img: "/lazzer.png",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
     link: "https://lazzer.vercel.app",
     github: "https://github.com/rajeshiitk/lazzer",
