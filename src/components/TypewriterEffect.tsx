@@ -17,7 +17,7 @@ const TypewriterEffect: FC<Props> = () => {
           )
           .pauseFor(1200)
           .deleteChars(9)
-          .typeString("<span style='color: #ff0000; '>Next.js</span> Developer")
+          .typeString("<span style='color: #ff0000; '>Next.js</span> Dev")
           .pauseFor(1200)
           .deleteAll()
           .changeDelay(50)

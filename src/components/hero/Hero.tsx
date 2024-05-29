@@ -20,12 +20,13 @@ const Hero: FC = (props: Props) => {
       </div>
       <div className=" bg-gradient-to-t from-gray-950 to-transparent  z-10 h-[calc(100svh)] w-full sm:hidden absolute"></div>
       {/* Left */}
-      <div className="flex flex-col z-20 justify-between h-[calc(100svh)] sm:justify-evenly">
-        <div className="flex flex-col min-h-80 sm:justify-center py-12   gap-6">
+      <div className="flex flex-col z-20  justify-between h-[calc(100svh)] sm:justify-evenly">
+        <div className="flex flex-col min-h-80 sm:justify-center py-20   gap-6">
           <div className="">
+            <p>Hi I am</p>
             <TextGenerateEffect words={intro} className="" />
           </div>
-          <div className=" text-3xl dark:text-white min-h-10">
+          <div className="text-xl  sm:text-3xl dark:text-white min-h-10">
             <TypewriterEffect />{" "}
           </div>
         </div>
