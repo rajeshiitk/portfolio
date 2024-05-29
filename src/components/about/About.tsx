@@ -1,11 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { StickyScroll } from "../ui/sticky-scroll-reveal";
 import PersonalInfo from "./PersonalInfo";
-import Qualification from "./Qualification";
 import Skills from "./Skills";
 import Image from "next/image";
+import Education from "@/components/about/Education";
 
 interface Props {}
 export const tabMenu = [
@@ -14,7 +12,7 @@ export const tabMenu = [
   { label: "Skills", value: "skills" },
 ];
 
-const images = ["/personal.svg", "/qualifications.svg", "/skills.svg"];
+const images = ["/personal.svg", "/graduation.svg", "/skills.svg"];
 const content = [
   {
     title: "Personal Info",
@@ -22,8 +20,8 @@ const content = [
     image: images[0],
   },
   {
-    title: "Qualification",
-    component: <Qualification />,
+    title: "Education",
+    component: <Education />,
     image: images[1],
   },
   {
@@ -37,14 +35,15 @@ const About = (props: Props) => {
   const [hoveredPath, setHoveredPath] = useState<string>("perosnal-info");
   return (
     <main className="grid  ">
+      {/* <TracingBeam> */}
       {/* <div className=" bg-gradient-to-b from-gray-950 to-transparent  z-10 h-[calc(100svh)] w-full sm:hidden absolute"></div> */}
       {/* <section>
         <Image src="/profile-dark.png" alt="hero" width={350} height={350} />
       </section> */}
       <section className=" flex flex-col   pt-6 md:pt-10 dark:bg-gray-950  min-h-[100svh] items-center">
-        <h1 className="text-4xl md:mt-6 dark:text-white font-semibold ">
+        {/* <h1 className="text-5xl md:mt-6 dark:text-white font-semibold ">
           About me
-        </h1>
+        </h1> */}
         {/* Tab Menu */}
         {/* <div className="flex  items-center justify-between  p-3 ">
           <div className="flex w-fit max-w-full fixed rounded-full dark:border-2 border-2 z-30 left-1/2 -translate-x-1/2 backdrop-blur-sm bottom-10 space-x-3 items-center">
@@ -111,17 +110,19 @@ const About = (props: Props) => {
           {content.map((item, index) => (
             <div
               key={index}
-              className="h-[calc(100svh)] justify-center p-10 grid grid-cols-12"
+              className="sm:h-[calc(100svh)] items-center justify-center p-10 grid grid-cols-12"
             >
-              <div className="col-span-12 md:col-span-8">
-                <div className="text-xl font-semibold my-4">{item.title}</div>
-                {item.component}
+              <div className="col-span-12 content-center  justify-center items-center  h-full md:col-span-8">
+                <div className="">
+                  <h2 className="text-3xl font-bold  my-4">{item.title}</h2>
+                  {item.component}
+                </div>
               </div>
               <div className="hidden md:col-span-4 md:block ">
                 <Image
                   src={item.image}
-                  width={400}
-                  height={400}
+                  width={index === 1 ? 200 : 400}
+                  height={index === 1 ? 200 : 400}
                   alt={item.title}
                 />
               </div>
@@ -129,6 +130,7 @@ const About = (props: Props) => {
           ))}
         </div>
       </section>
+      {/* </TracingBeam> */}
     </main>
   );
 };

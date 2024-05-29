@@ -19,10 +19,6 @@ const personalInfo = [
     icon: <PiPersonSimpleLight />,
   },
   {
-    label: "+91 9680702761",
-    icon: <PiPhoneCallThin />,
-  },
-  {
     label: "rajuvert18@gmail.com",
     icon: <CiMail />,
   },
