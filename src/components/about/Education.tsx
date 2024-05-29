@@ -30,7 +30,7 @@ const Education = (props: Props) => {
     <div>
       <TracingBeam className="p-8 ">
         {/* <h1 className="text-3xl font-bold">Education</h1> */}
-        <div className="mt-6   h-full space-y-12">
+        <div className="mt-2   h-full space-y-12">
           {EducationData.map((edu) => (
             <div key={edu.id}>
               <h2 className="text-xl font-semibold">{edu.title}</h2>
