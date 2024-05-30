@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
@@ -22,9 +22,33 @@ let links = [
 function Navbar() {
   const pathname = usePathname() || "";
   const [hoveredPath, setHoveredPath] = useState(pathname);
+  const [yValue, setYValue] = useState(0);
+  const [toHide, setToHide] = useState(false);
+
+  useEffect(() => {
+    const showHeaderOnScrollUp = () => {
+      if (yValue >= window.scrollY) {
+        setToHide(false);
+      } else {
+        setToHide(true);
+      }
+      setYValue(window.scrollY);
+    };
+
+    window.addEventListener("scroll", showHeaderOnScrollUp);
+
+    return () => {
+      window.removeEventListener("scroll", showHeaderOnScrollUp);
+    };
+  }, [yValue]);
 
   return (
-    <nav className="  fixed   backdrop-blur-sm w-full z-30  rounded-lg">
+    <nav
+      className={
+        "fixed   backdrop-blur-sm w-full z-30 transition-all  rounded-lg" +
+        (toHide && "  h-0 hidden ")
+      }
+    >
       <div className=" mx-auto max-2xl px-0.5 sm:px-4 lg:px-0 ">
         <div className="flex  items-center justify-between  p-3 ">
           <div className="flex space-x-3 items-center">
@@ -37,7 +61,7 @@ function Navbar() {
                   key={item.path}
                   href={item.path}
                   onMouseOver={() => setHoveredPath(item.path)}
-                  className={`px-1 py-1 rounded-full text-sm lg:text-base relative  duration-300 ease-in ${
+                  className={`px-1 py-1  rounded-full text-sm lg:text-base relative  duration-300 ease-in ${
                     isActive
                       ? "text-highlight text-base dark:text-highlight"
                       : "text-zinc-400"
@@ -70,6 +94,10 @@ function Navbar() {
                         duration: 0.3,
                       }}
                     />
+                  )}
+
+                  {isActive && (
+                    <div className="absolute -bottom-[2px] left-1/2 hidden h-[2px] w-[60%] -translate-x-1/2 rounded-xl bg-foreground md:block" />
                   )}
                 </Link>
               );
