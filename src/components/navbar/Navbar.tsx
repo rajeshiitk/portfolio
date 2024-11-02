@@ -105,12 +105,12 @@ function Navbar() {
           </div>
 
           <div className="flex items-center gap-x-3">
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
 
             <Link href={"/contact"}>
               <div className="bg-highlight duration-200  hover:bg-transparent    text-white  hover:text-highlight px-2 rounded-md flex items-center gap-x-2 py-1  border-2 border-transparent hover:border-highlight">
                 <AiOutlinePlusCircle className=" text-xl" />
-                <span className=" sm:font-semibold ">Hire Me</span>
+                <span className=" sm:font-semibold ">Contact</span>
               </div>
             </Link>
           </div>
