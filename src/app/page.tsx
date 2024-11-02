@@ -9,13 +9,13 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      {/* <About /> */}
-      <Separator />
+      <About />
+      {/* <Separator /> */}
 
-      <div className="px-4 py-4  min-h-screen">
+      {/* <div className="px-4 py-4  min-h-screen">
         <h2 className="text-3xl font-bold text-center my-6">Tech-Stack</h2>
         <Skills />
-      </div>
+      </div> */}
       <ProjectPage />
       <Contact />
     </main>
