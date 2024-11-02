@@ -80,13 +80,15 @@ const Hero: FC = (props: Props) => {
         <div className="flex flex-col items-center justify-center gap-8 text-center">
           {/* Animated name */}
           <motion.div
+            className="relative"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight">
+            <h1 className="text-4xl relative md:text-6xl font-bold text-white tracking-tight">
               {intro}
             </h1>
+            <div className="absolute -bottom-5 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent" />
           </motion.div>
 
           {/* Role description */}
@@ -96,8 +98,8 @@ const Hero: FC = (props: Props) => {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="text-lg md:text-xl text-gray-400 max-w-2xl"
           >
-            Full Stack Developer specializing in modern web technologies and
-            scalable applications
+            Bridging the gap between hardware and software with innovative
+            solutions and cutting-edge technology.
           </motion.p>
 
           {/* Social links */}
