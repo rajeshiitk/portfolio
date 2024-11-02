@@ -47,7 +47,6 @@ const skills = [
   { name: "MongoDB", icon: <SiMongodb /> },
   { name: "Next.js", icon: <SiNextdotjs /> },
   { name: "React Native", icon: <SiNativescript /> },
-  { name: "Redux", icon: <SiRedux /> },
   { name: "Redux-Toolkit", icon: <SiRedux /> },
   { name: "Tailwind CSS", icon: <SiTailwindcss /> },
   { name: "Figma", icon: <SiFigma /> },
@@ -55,11 +54,6 @@ const skills = [
   { name: "C++", icon: <SiCplusplus /> },
   { name: "Python", icon: <SiPython /> },
   { name: "Chart.js", icon: <SiChartdotjs /> },
-  { name: "Bcrypt.js" },
-  { name: "Passport.js", icon: <SiPassport /> },
-  { name: "Bootstrap", icon: <FaBootstrap /> },
-  { name: "Chakra UI", icon: <SiChakraui /> },
-  { name: "Material-UI", icon: <SiMaterialdesign /> },
   { name: "Mongoose", icon: <SiMongoose /> },
   { name: "AWS", icon: <SiAmazonaws /> },
   { name: "Git", icon: <SiGit /> },
@@ -75,7 +69,7 @@ const skills = [
 
 function Skills(props: Props) {
   return (
-    <div className="flex flex-wrap justify-center gap-2">
+    <div className="flex flex-wrap text-sm  justify-center gap-2">
       {skills.map((skill, index) => (
         <Badge key={index} value={skill.name} icon={skill.icon} index={index} />
       ))}

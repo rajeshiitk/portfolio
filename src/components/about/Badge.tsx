@@ -9,7 +9,7 @@ interface Props {
 const Badge = ({ value, index, icon }: Props) => {
   return (
     <div
-      className={`relative rounded-full border w-fit px-2 py-1 overflow-hidden font-medium  cursor-pointer   group`}
+      className={`relative rounded-full border w-fit px-2 py-1 overflow-hidden font-medium  cursor-pointer  group`}
     >
       <span className="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-highlight group-hover:w-full ease"></span>
       <span className="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2  border-highlight group-hover:w-full ease"></span>

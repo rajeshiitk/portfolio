@@ -20,20 +20,20 @@ interface SocialLink {
 
 const socialLinks: SocialLink[] = [
   {
-    href: "https://github.com/yourusername",
+    href: "https://github.com/rajeshiitk",
     icon: <FaGithub className="w-6 h-6" />,
     label: "GitHub",
   },
   {
-    href: "https://linkedin.com/in/yourusername",
+    href: "https://linkedin.com/in/rajesh-choudhary-154343226",
     icon: <FaLinkedin className="w-6 h-6" />,
     label: "LinkedIn",
   },
-  {
-    href: "https://twitter.com/yourusername",
-    icon: <FaTwitter className="w-6 h-6" />,
-    label: "Twitter",
-  },
+  // {
+  //   href: "https://twitter.com/rajeshiitk",
+  //   icon: <FaTwitter className="w-6 h-6" />,
+  //   label: "Twitter",
+  // },
 ];
 
 const intro = `Rajesh Choudhary`;
@@ -128,7 +128,7 @@ const Hero: FC = (props: Props) => {
             transition={{ delay: 0.6, duration: 0.5 }}
           >
             <a
-              href="#contact"
+              href="mailto:rajuvert18@gmail.com"
               className="inline-flex items-center px-6 py-3 text-base font-medium text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-full hover:from-purple-700 hover:to-blue-700 transition-all"
             >
               Get in touch
