@@ -1,5 +1,7 @@
 "use client";
 import React, { FC } from "react";
+import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 import Image from "next/image";
 import TypewriterEffect from "../TypewriterEffect";
@@ -9,48 +11,130 @@ import { PiDownloadSimple } from "react-icons/pi";
 import { IoIosArrowRoundForward } from "react-icons/io";
 
 interface Props {}
+
+interface SocialLink {
+  href: string;
+  icon: JSX.Element;
+  label: string;
+}
+
+const socialLinks: SocialLink[] = [
+  {
+    href: "https://github.com/yourusername",
+    icon: <FaGithub className="w-6 h-6" />,
+    label: "GitHub",
+  },
+  {
+    href: "https://linkedin.com/in/yourusername",
+    icon: <FaLinkedin className="w-6 h-6" />,
+    label: "LinkedIn",
+  },
+  {
+    href: "https://twitter.com/yourusername",
+    icon: <FaTwitter className="w-6 h-6" />,
+    label: "Twitter",
+  },
+];
+
 const intro = `Rajesh Choudhary`;
 
 const Hero: FC = (props: Props) => {
   return (
-    <section className="px-8 relative    h-[calc(100svh)] grid sm:grid-cols-2">
-      <div className="absolute top-0 z-[-2] hidden dark:block h-full w-full bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div>
-      <div className="absolute hidden sm:block inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]">
-        <div className="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_100%_200px,#d5c5ff,transparent)]"></div>
-      </div>
-      <div className=" bg-gradient-to-t from-gray-950 to-transparent  z-10 h-[calc(100svh)] w-full sm:hidden absolute"></div>
-      {/* Left */}
-      <div className="flex flex-col z-20  justify-between h-[calc(100svh)] sm:justify-evenly">
-        <div className="flex flex-col min-h-80 sm:justify-center py-20   gap-6">
-          <div className="">
-            <p>Hi I am</p>
-            <TextGenerateEffect words={intro} className="" />
-          </div>
-          <div className="text-xl  sm:text-3xl dark:text-white min-h-10">
-            <TypewriterEffect />{" "}
-          </div>
-        </div>
-        <div className="flex z-10  sm:py-8 flex-col items-center   pb-20 sm:flex-row gap-6">
-          <button className="px-8 py-2 flex  justify-center items-center gap-2 bg-highlight text-white font-bold transition w-48 duration-200 hover:bg-transparent dark:hover:text-white hover:text-white sm:hover:text-black border-2 border-transparent dark:text-white hover:border-red-600">
-            Connect me
-            <IoIosArrowRoundForward className="text-xl" />
-          </button>
-          <button className="px-8 py-2 justify-center flex gap-2 items-center hover:text-highlight font-bold transition duration-200 bg-transparent  text-white sm:text-black border-2 w-48  border-red-600 dark:text-white">
-            Resume
-            <PiDownloadSimple className="" />
-          </button>
+    <section className="relative h-[calc(100svh)] flex items-center justify-center overflow-hidden bg-[#030014]">
+      {/* Background gradients */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_500px_at_50%_-30%,#1a1158,transparent_80%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_400px_at_80%_40%,#120f45,transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_400px_at_20%_60%,#150f35,transparent_70%)]" />
+
+      {/* Floating tech stack with improved z-index and responsive positioning */}
+      <div className="hidden md:block absolute top-[20%] left-[5%] z-10 group animate-float">
+        <div className="relative p-4 backdrop-blur-md bg-[rgba(255,255,255,0.05)] rounded-lg border border-[rgba(255,255,255,0.1)] shadow-xl rotate-12 hover:rotate-0 transition-transform duration-300">
+          <div className="text-4xl">⚛️</div>
+          <p className="text-sm font-light">React</p>
         </div>
       </div>
 
-      {/* right */}
-      <div className="h-0">
-        <Image
-          className=" -z-0 bottom-0   md:opacity-100 absolute right-0 "
-          src="/profile_dark.png"
-          alt="hero"
-          width={350}
-          height={350}
-        />
+      <div className="hidden md:block absolute top-[40%] right-[5%] z-10 group animate-float animation-delay-2000">
+        <div className="relative p-4 backdrop-blur-md bg-[rgba(255,255,255,0.05)] rounded-lg border border-[rgba(255,255,255,0.1)] shadow-xl -rotate-12 hover:rotate-0 transition-transform duration-300">
+          <div className="text-4xl">🚀</div>
+          <p className="text-sm font-light">Next.js</p>
+        </div>
+      </div>
+
+      <div className="hidden md:block absolute bottom-[25%] left-[15%] z-10 group animate-float animation-delay-1000">
+        <div className="relative p-4 backdrop-blur-md bg-[rgba(255,255,255,0.05)] rounded-lg border border-[rgba(255,255,255,0.1)] shadow-xl rotate-6 hover:rotate-0 transition-transform duration-300">
+          <div className="text-4xl">🎨</div>
+          <p className="text-sm font-light">Tailwind</p>
+        </div>
+      </div>
+
+      <div className="hidden md:block absolute bottom-[30%] right-[15%] z-10 group animate-float animation-delay-3000">
+        <div className="relative p-4 backdrop-blur-md bg-[rgba(255,255,255,0.05)] rounded-lg border border-[rgba(255,255,255,0.1)] shadow-xl -rotate-6 hover:rotate-0 transition-transform duration-300">
+          <div className="text-4xl">🔥</div>
+          <p className="text-sm font-light text-center">MERN</p>
+        </div>
+      </div>
+
+      {/* Main content */}
+      <div className="container relative z-20 mx-auto px-4">
+        <div className="flex flex-col items-center justify-center gap-8 text-center">
+          {/* Animated name */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight">
+              {intro}
+            </h1>
+          </motion.div>
+
+          {/* Role description */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="text-lg md:text-xl text-gray-400 max-w-2xl"
+          >
+            Full Stack Developer specializing in modern web technologies and
+            scalable applications
+          </motion.p>
+
+          {/* Social links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+            className="flex gap-6"
+          >
+            {socialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label={link.label}
+              >
+                {link.icon}
+              </a>
+            ))}
+          </motion.div>
+
+          {/* CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+          >
+            <a
+              href="#contact"
+              className="inline-flex items-center px-6 py-3 text-base font-medium text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-full hover:from-purple-700 hover:to-blue-700 transition-all"
+            >
+              Get in touch
+            </a>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
